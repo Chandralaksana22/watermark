@@ -2,12 +2,7 @@ import React, { useState } from 'react';
 import WatermarkForm from './components/WatermarkForm';
 
 function App() {
-  const [watermarkText, setWatermarkText] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
-
-  const handleWatermarkTextChange = (event) => {
-    setWatermarkText(event.target.value);
-  };
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -47,7 +42,6 @@ function App() {
       }}>
       <h1 className="text-3xl font-semibold text-center text-black pt-10 mb-5">Aplikasi Watermark</h1>
       <WatermarkForm
-        onWatermarkTextChange={handleWatermarkTextChange}
         onFileChange={handleFileChange}
         onSubmit={handleWatermarkCreation}
       />
